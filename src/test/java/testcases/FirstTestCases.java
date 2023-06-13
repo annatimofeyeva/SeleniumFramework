@@ -61,8 +61,7 @@ public class FirstTestCases {
         driver.findElement(By.xpath("//input[@type = 'email']")).sendKeys("email@sdd.ut");
         driver.findElement(By.xpath("//input[@type = 'password']")).sendKeys("password");
         driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
-        Thread.sleep(4000);
-        // Error message: "Sorry, something went wrong. Please try again."
+        Thread.sleep(2000);
         driver.close();
     }
 
@@ -81,9 +80,8 @@ public class FirstTestCases {
         driver.findElement(By.xpath("//input[@type = 'email']")).sendKeys("email@sdd.ut");
         driver.findElement(By.xpath("//input[@type = 'password']")).sendKeys("password");
         driver.findElement(By.xpath("//input[@type = 'password']")).sendKeys(Keys.ENTER);
-        Thread.sleep(4000);
-        // Error message: "Sorry, something went wrong. Please try again."
-        //driver.close();
+        Thread.sleep(2000);
+        driver.close();
     }
 
     @Test
@@ -153,4 +151,4 @@ public class FirstTestCases {
         System.out.println(driver.findElement(By.xpath("//button[text() = 'Next']")).isEnabled());
         driver.close();
     }
-} 
+}
