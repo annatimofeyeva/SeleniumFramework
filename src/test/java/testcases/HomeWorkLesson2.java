@@ -128,7 +128,6 @@ public class HomeWorkLesson2 {
         driver.manage().window().maximize();
         Thread.sleep(1000);
         driver.findElement(By.id("log-in-button")).click();
-        // blank email and password fields submitted
         driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("");
         driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("");
         driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
@@ -179,28 +178,6 @@ public class HomeWorkLesson2 {
         actualIncorrectEmailErrorMessageText = driver.findElement(By.xpath("//span[text() = 'These credentials do not match our records.']"))
                 .getText();
         Assert.assertEquals(actualIncorrectEmailErrorMessageText, "These credentials do not match our records.");
-        driver.close();
-    }
-    // USED SUBMIT() TO SUBMIT FORM
-    @Test
-    public void validateIncorrectCredentialsWithSubmit() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        ChromeDriver driver = new ChromeDriver(options);
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
-        Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("email@gmail.com");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("123456");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
-        Thread.sleep(4000);
-        String actualIncorrectCredentialsErrorMessageText;
-        actualIncorrectCredentialsErrorMessageText = driver.findElement(By.xpath("//span[text() = 'These credentials do not match our records.']"))
-                .getText();
-        System.out.println(actualIncorrectCredentialsErrorMessageText);
-        Assert.assertEquals(actualIncorrectCredentialsErrorMessageText, "These credentials do not match our records.");
         driver.close();
     }
     @Test
