@@ -33,7 +33,7 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
         driver.close();
     }
     @Test
@@ -45,9 +45,9 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        System.out.println(driver.findElement(By.xpath("//input[@id = 'email']")).isDisplayed());
-        boolean expectedEmailFieldPresence = driver.findElement(By.xpath("//input[@id = 'email']")).isDisplayed();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        System.out.println(driver.findElement(By.xpath("//input[@id='email']")).isDisplayed());
+        boolean expectedEmailFieldPresence = driver.findElement(By.xpath("//input[@id='email']")).isDisplayed();
         Assert.assertEquals(expectedEmailFieldPresence, true);
         driver.close();
     }
@@ -60,9 +60,9 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        System.out.println(driver.findElement(By.xpath("//input[@id = 'password']")).isDisplayed());
-        boolean expectedPasswordFieldPresence = driver.findElement(By.xpath("//input[@id = 'password']")).isDisplayed();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        System.out.println(driver.findElement(By.xpath("//input[@id='password']")).isDisplayed());
+        boolean expectedPasswordFieldPresence = driver.findElement(By.xpath("//input[@id='password']")).isDisplayed();
         Assert.assertEquals(expectedPasswordFieldPresence, true);
         driver.close();
     }
@@ -75,9 +75,9 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        System.out.println(driver.findElement(By.xpath("//button[@type = 'submit']")).isDisplayed());
-        boolean actualLoginButtonPresence = driver.findElement(By.xpath("//button[@type = 'submit']")).isDisplayed();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        System.out.println(driver.findElement(By.xpath("//button[text()='Log In']")).isDisplayed());
+        boolean actualLoginButtonPresence = driver.findElement(By.xpath("//button[text()='Log In']")).isDisplayed();
         Assert.assertEquals(actualLoginButtonPresence, true);
         driver.close();
     }
@@ -90,10 +90,10 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("email.com");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("123456");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("email.com");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[text()='Log In']")).submit();
         driver.close();
     }
     // USED CLICK() TO SUBMIT FORM
@@ -106,14 +106,14 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
         // blank email and password fields submitted
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("");
+        driver.findElement(By.xpath("//button[text()='Log In']")).click();
         Thread.sleep(4000);
         String actualErrorMessageText;
-        actualErrorMessageText = driver.findElement(By.xpath("//p[text() = 'Error: fields are empty']")).getText();
+        actualErrorMessageText = driver.findElement(By.xpath("//p[text()='Error: fields are empty']")).getText();
         Assert.assertEquals(actualErrorMessageText, "Error: fields are empty");
         driver.close();
     }
@@ -127,14 +127,14 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("");
+        driver.findElement(By.xpath("//button[text()='Log In']")).submit();
         Thread.sleep(2000);
-        String actualEmailErrorMessageText = driver.findElement(By.xpath("//span[text() = 'The email field is required.']")).getText();
+        String actualEmailErrorMessageText = driver.findElement(By.xpath("//span[text()='The email field is required.']")).getText();
         Assert.assertEquals(actualEmailErrorMessageText, "The email field is required.");
-        String actualPasswordErrorMessageText = driver.findElement(By.xpath("//span[text() = 'The password field is required.']")).getText();
+        String actualPasswordErrorMessageText = driver.findElement(By.xpath("//span[text()='The password field is required.']")).getText();
         Assert.assertEquals(actualPasswordErrorMessageText, "The password field is required.");
         driver.close();
     }
@@ -148,13 +148,13 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("email.com");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("123456");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).click();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("email.com");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[text()='Log In']")).click();
         Thread.sleep(4000);
         String actualIncorrectEmailErrorMessageText;
-        actualIncorrectEmailErrorMessageText = driver.findElement(By.xpath("//p[text() = 'Error: email is incorrect']")).getText();
+        actualIncorrectEmailErrorMessageText = driver.findElement(By.xpath("//p[text()='Error: email is incorrect']")).getText();
         System.out.println(actualIncorrectEmailErrorMessageText);
         Assert.assertEquals(actualIncorrectEmailErrorMessageText, "Error: email is incorrect");
         driver.close();
@@ -169,13 +169,13 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        driver.findElement(By.xpath("//input[@id = 'email']")).sendKeys("email.com");
-        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("123456");
-        driver.findElement(By.xpath("//button[@type = 'submit']")).submit();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("email.com");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[text()='Log In']")).submit();
         Thread.sleep(4000);
         String actualIncorrectEmailErrorMessageText;
-        actualIncorrectEmailErrorMessageText = driver.findElement(By.xpath("//span[text() = 'These credentials do not match our records.']"))
+        actualIncorrectEmailErrorMessageText = driver.findElement(By.xpath("//span[text()='These credentials do not match our records.']"))
                 .getText();
         Assert.assertEquals(actualIncorrectEmailErrorMessageText, "These credentials do not match our records.");
         driver.close();
@@ -189,8 +189,8 @@ public class HomeWorkLesson2 {
         driver.get("https://test.my-fork.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("log-in-button")).click();
-        boolean checkboxCheckedByDefault = driver.findElement(By.xpath("//input[@id = 'auth-page-remember-me']")).isSelected();
+        driver.findElement(By.xpath("//div[@id='log-in-button']/..")).click();
+        boolean checkboxCheckedByDefault = driver.findElement(By.xpath("//input[@id='auth-page-remember-me']")).isSelected();
         Assert.assertEquals(checkboxCheckedByDefault, true);
         driver.close();
     }
