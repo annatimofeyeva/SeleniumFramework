@@ -13,7 +13,8 @@ import org.testng.annotations.Test;
         - Validate error is appeared after invalid email and password in corresponding fields and Log In button clicked
         - Validate that Remember Me checkbox is checked by default
  */
-public class HomeWorkLesson2 {
+public class HomeWorkLesson2
+{
     @Test
     public void openMyFork() {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");

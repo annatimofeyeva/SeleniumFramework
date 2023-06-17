@@ -4,7 +4,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
-public class FirstTestCases {
+
+public class FirstTestCases
+{
     @Test
     public void startBrowser() {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
@@ -144,3 +146,4 @@ public class FirstTestCases {
         driver.close();
     }
 }
+
