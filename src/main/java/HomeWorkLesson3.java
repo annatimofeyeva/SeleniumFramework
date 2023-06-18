@@ -1,4 +1,4 @@
-public class HomeworkLesson3 {
+public class HomeWorkLesson3 {
 
     public static void main(String[] args) {
         dynamicallyPrintGreeting(args);
