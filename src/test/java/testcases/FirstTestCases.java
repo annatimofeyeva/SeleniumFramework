@@ -5,11 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-public class FirstTestCases {
+public class FirstTestCases
+{
     @Test
     public void startBrowser() {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
-        // I connected Java 11 to the Project, so I have to add ChromeOptions below
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver = new ChromeDriver(options);
@@ -17,12 +17,10 @@ public class FirstTestCases {
         driver.manage().window().maximize();
         driver.close();
     }
-
     // Lesson2: Selenium overview
     @Test
     public void openWebsite() {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
-        // I connected Java 11 to the Project, so I have to add ChromeOptions below
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver = new ChromeDriver(options);
@@ -30,7 +28,6 @@ public class FirstTestCases {
         driver.manage().window().maximize();
         driver.close();
     }
-
     // Selenium WebDriver element interaction lesson
     @Test
     public void openSighInPage() throws InterruptedException {
@@ -45,7 +42,6 @@ public class FirstTestCases {
         driver.findElement(By.xpath("//a[text() = 'Sign In']")).click();
         driver.close();
     }
-
     @Test
     public void fillEmailAndPasswordField() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
@@ -64,7 +60,6 @@ public class FirstTestCases {
         Thread.sleep(2000);
         driver.close();
     }
-
     @Test
     public void fillEmailAndPasswordFieldAndPressEnter() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
@@ -83,7 +78,6 @@ public class FirstTestCases {
         Thread.sleep(2000);
         driver.close();
     }
-
     @Test
     public void validateSignInError() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/home/anya/IdeaProjects/SeleniumProject/src/test/resources/chromedriver");
@@ -152,3 +146,4 @@ public class FirstTestCases {
         driver.close();
     }
 }
+
