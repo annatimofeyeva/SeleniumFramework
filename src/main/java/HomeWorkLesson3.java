@@ -2,13 +2,14 @@ public class HomeWorkLesson3 {
 
     public static void main(String[] args) {
         dynamicallyPrintGreeting(args);
+        dynamicallyPrintGreetingFromLesson();
         mathCalc();
         printTax(11000);
         printWorkingHours("marketing");
         printEachSecondHour();
     }
 
-    /*Values for arguments to dynamicallyPrintGreeting(String args[]) are provided via CLI
+    /*Values for arguments to dynamicallyPrintGreeting(String args[]) are provided dynamically via CLI
     or via Run/Edit Configurations/Program Arguments*/
 /*  PROGRAM OUTPUT:
     Greetings from:
@@ -31,6 +32,17 @@ public class HomeWorkLesson3 {
                 "Location: = " + location + "\n" +
                 "Product name: " + product_name + "\n" +
                 "Price: = " + price);
+    }
+    public static void dynamicallyPrintGreetingFromLesson() {
+        String username = "Natasha";
+        int age = 24;
+        String storeName = "GAP";
+        String product_name = "jeans";
+        double price = 80.0;
+        int jeansNumber = 1;
+        System.out.println("Dear " + username + "!" + " Welcome to " + storeName + "!" + " Our data indicates that today you turn " +
+                age + ". We are offer you a special gift! With purchase on any pair of jeans above $" + price + " you will get " +
+                jeansNumber + " more pair for free! ");
     }
     public static void mathCalc() {
         int a = 100;
