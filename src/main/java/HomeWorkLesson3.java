@@ -67,10 +67,16 @@ public class HomeWorkLesson3 {
         switch (department) {
             case "sales":
                 System.out.println("Sales department works from 8am to 12pm.");
+                break;
             case "operations":
                 System.out.println("Operation department works from 6am to 12pm.");
+                break;
             case "marketing":
                 System.out.println("Marketing department works from 10am to 5pm.");
+                break;
+            case "logistics":
+                System.out.println("Logistics department works from 7am to 11pm.");
+                break;
         }
     }
     public static void printEachSecondHour() {
