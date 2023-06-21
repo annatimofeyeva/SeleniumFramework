@@ -37,7 +37,6 @@ public class HomeWorkLesson3 {
         String username = "Natasha";
         int age = 24;
         String storeName = "GAP";
-        String product_name = "jeans";
         double price = 80.0;
         int jeansNumber = 1;
         System.out.println("Dear " + username + "!" + " Welcome to " + storeName + "!" + " Our data indicates that today you turn " +
