@@ -1,6 +1,27 @@
-public class HomeWorkLesson3 {
-
+public class HomeWorkLesson3
+{
     public static void main(String[] args) {
+
+        // LIVE LESSON3 CODE:
+        //boolean lamp = true;
+        // if using false - code will not be broken
+        boolean lamp = false;
+        boolean broken_lamp = true;
+        int roomNumber = 3;
+
+        if(lamp){
+            System.out.println("Turn on the light");
+        }else if(broken_lamp) {
+            System.out.println("Fix the lamp");
+        }else if(lamp!= true && roomNumber >= 3) {
+            System.out.println("Call for the help");
+        }
+        else {
+            System.out.println("There is no lamp");
+        }
+        System.out.println("I am still here");
+
+    // HOMEWORK:
         dynamicallyPrintGreeting(args);
         dynamicallyPrintGreetingFromLesson();
         mathCalc();
@@ -84,4 +105,6 @@ public class HomeWorkLesson3 {
         }
     }
 }
+
+
 
