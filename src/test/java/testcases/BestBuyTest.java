@@ -5,7 +5,6 @@ import pageobjects.SighInPage;
 
 public class BestBuyTest extends BaseTest
 {
-
     @Test
     public void openSighInPage() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
