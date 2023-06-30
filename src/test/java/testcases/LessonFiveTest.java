@@ -1,9 +1,14 @@
 package testcases;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import java.util.*;
 
 public class LessonFiveTest extends BaseTest
 {
+    // Data structure practice
     @Test
     public void arrayPractice() {
         int[] arr = new int[3];
@@ -43,5 +48,24 @@ public class LessonFiveTest extends BaseTest
         friendsWithProfessions.remove("Adam");
         System.out.println(friendsWithProfessions);
         System.out.println(friendsWithProfessions.size());
+    }
+    // difference between driver.close() and driver.quit()
+    // Handling Amazon dropdown
+    @Test
+    public void  closeOrQuite() {
+        driver.get("https://www.amazon.com/");
+        driver.findElement(By.xpath("//a[@data-csa-c-slot-id='nav_cs_1']")).sendKeys(Keys.chord(Keys.CONTROL, Keys.ENTER));
+    }
+    @Test
+    public void dropDown() {
+        driver.get("https://www.amazon.com/");
+        WebElement searchDropDown = driver.findElement(By.id("searchDropdownBox"));
+        Select searchOptions = new Select(searchDropDown);
+        List<WebElement> options = new ArrayList<>();
+        options = searchOptions.getOptions();
+        System.out.println(options.get(0).getText());
+        for(int i =0; i < options.size(); i++) {
+            System.out.println(options.get(i).getText());
+        }
     }
 }
